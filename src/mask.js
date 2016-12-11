@@ -680,8 +680,8 @@ angular.module('ui.mask', [])
                             function getCaretPosition(input) {
                                 if (!input)
                                     return 0;
-                                if (input.selectionStart !== undefined) {
-                                    return input.selectionStart;
+                                if (input.selectionEnd !== undefined) {
+                                    return input.selectionEnd;
                                 } else if (document.selection) {
                                     if (isFocused(iElement[0])) {
                                         // Curse you IE

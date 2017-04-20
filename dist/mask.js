@@ -1,7 +1,7 @@
 /*!
  * angular-ui-mask
  * https://github.com/angular-ui/ui-mask
- * Version: 1.8.7 - 2016-12-11T19:48:05.946Z
+ * Version: 1.8.7 - 2017-04-20T16:44:03.495Z
  * License: MIT
  */
 
@@ -645,7 +645,9 @@ angular.module('ui.mask', [])
                                 if (!valAltered && val.length > valMasked.length)
                                     valAltered = true;
 
-                                iElement.val(valMasked);
+                                if (valMasked !== val) {
+                                    iElement.val(valMasked);
+                                }
 
                                 //we need this check.  What could happen if you don't have it is that you'll set the model value without the user
                                 //actually doing anything.  Meaning, things like pristine and touched will be set.
